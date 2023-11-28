@@ -2,29 +2,25 @@ import { useSelector, useDispatch } from "react-redux";
 import { changeCost, changeName, addCar } from "../store";
 
 function CarForm() {
-  const disptach = useDispatch();
+  const dispatch = useDispatch();
 
   const { name, cost } = useSelector((state) => {
     return { name: state.form.name, cost: state.form.cost };
   });
 
   const handleNameChange = function (event) {
-    disptach(changeName(event.target.value));
+    dispatch(changeName(event.target.value));
   };
 
   const handleCostChange = function (event) {
     const carCost = parseInt(event.target.value) || 0;
-    disptach(changeCost(carCost));
+    dispatch(changeCost(carCost));
   };
 
   const handleSubmit = function (event) {
     event.preventDefault();
-    disptach(
-      addCar({
-        name,
-        cost,
-      })
-    );
+
+    dispatch(addCar({ name, cost }));
 
     // disptach(changeCost(0));
     // disptach(changeName(""));

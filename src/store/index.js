@@ -6,12 +6,12 @@ import {
   changeSearchTerm,
 } from "./slices/carSlice";
 
-import { formResducer, changeName, changeCost } from "./slices/formSlice";
+import { formReducer, changeName, changeCost } from "./slices/formSlice";
 
 const store = configureStore({
   reducer: {
     cars: carReducer,
-    form: formResducer,
+    form: formReducer,
   },
 });
 
