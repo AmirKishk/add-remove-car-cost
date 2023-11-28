@@ -3,6 +3,7 @@ import { removeCar } from "../store";
 
 function CarList() {
   const dispatch = useDispatch();
+
   const cars = useSelector(({ cars: { mars, searchTerm } }) => {
     return mars.filter((mar) =>
       mar.name.toLowerCase().includes(searchTerm.toLowerCase())
